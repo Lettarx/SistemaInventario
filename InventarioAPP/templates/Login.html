@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href='{% static  "styles/Login.css"%}'>
+        <title>Login - Sistema Inventario</title>
+    </head>
+    <body>
+        <form class="form" method="POST">
+             
+            <div class="form-header">
+                <img src="{% static 'img/LogoText.png'%}" class="img-logo" alt="Logo">
+            </div>
+             {{ formLogin.as_div }}
+             {% csrf_token %}
+             <button class="boton" type="submit" href="../inicio">Iniciar Sesion</button>
+             <span>Usuario por defecto(user:ngonzalez pass:123456) puede ingresar otro desde admin</span>
+           
+        </form>
+    </body>
+</html>

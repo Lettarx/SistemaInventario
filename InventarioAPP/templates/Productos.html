@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href='{% static  "styles/Producto.css"%}'>
+        <title>Productos - Sistema Inventario</title>
+    </head>
+    <body>
+        <a href="../inicio"><strong>Inicio</strong></a>
+        <hr>
+        <header>
+            <img src="{% static 'img/Logo.png' %}" class="img-logo img">
+            <h1>Sistema Inventario</h1>
+            <a href="#">
+                <img src="{% static 'img/info.png' %}" class="img-logo img">
+                Informacion
+            </a>
+            <a href="">
+                <img src="{% static 'img/salir.png' %}" class="img-logo img">
+                Salir
+            </a>
+        </header>
+        <div class="divusuario">
+            <hr>
+            <p class="usuario">Usuario: Administrador &emsp; > &emsp; Productos</p>
+        </div>
+
+        <div class="body-productos">
+            <!-- <div class="gestion-produc">
+                <h2>Gestión de Productos</h2><br>
+                <div class="card-gestion-prod">
+                    <div class="card-body">
+                        <form action="/registrarProducto/" method="POST">
+                            <div class="dentro-form">
+                                {{form.as_div}}
+                                {% csrf_token %}
+                            </div>
+                            
+                            <a type="submit" href="/productos" class="boton-form">Guardar</a>
+                        </form>
+                    </div>
+                </div>
+            </div> -->
+            <div class="datagrid">
+                <h1>Listado de Cursos</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Código</th>
+                                <th>Descripción</th>
+                                <th>Categoria</th>
+                                <th colspan="2">Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for prod in productos %}
+                            <tr>
+                                <td>{{prod.codigoProducto}}</td>
+                                <td>{{prod.nombre}}</td>
+                                <td>{{prod.categoria_categoriaId}}</td>
+                                <td><a href="/actualizarProducto/{{ prod.codigoProducto }}" >Editar</a></td>
+                                <td><a href="/eliminarProducto/{{ prod.codigoProducto }}">Eliminar</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <a href="../addproducto" class="boton-form">Añadir Producto</a>
+                        
+            </div>
+        </div>
+    </body>
+</html>
