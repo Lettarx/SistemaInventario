@@ -193,3 +193,21 @@ header a .img {
 }
 .datagrid table tbody td:first-child { border-left: none; }
 .datagrid table tbody tr:last-child td { border-bottom: none; }
+
+.boton-form {
+    display: flex;
+    background-color: #5c7c9b;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border-color: #5c7c9b;
+    width: 130px;
+    height: 20px;
+    margin: 20px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.boton-form a{
+    color: white;
+}

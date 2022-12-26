@@ -11,21 +11,7 @@
         {% include 'header.html' %}
 
         <div class="body-productos">
-            <!-- <div class="gestion-produc">
-                <h2>Gestión de Productos</h2><br>
-                <div class="card-gestion-prod">
-                    <div class="card-body">
-                        <form action="/registrarProducto/" method="POST">
-                            <div class="dentro-form">
-                                {{form.as_div}}
-                                {% csrf_token %}
-                            </div>
-                            
-                            <a type="submit" href="/productos" class="boton-form">Guardar</a>
-                        </form>
-                    </div>
-                </div>
-            </div> -->
+           
             <div class="datagrid">
                 <h1>Listado de Cursos</h1>
                     <table class="table table-striped">
@@ -50,7 +36,10 @@
                             {% endfor %}
                         </tbody>
                     </table>
-                    <a href="../addproducto" class="boton-form">Añadir Producto</a>
+                    <div class="boton-form">
+                        <a href="../addproducto" >Añadir Producto</a>
+                    </div>
+                    
                         
             </div>
         </div>

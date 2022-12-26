@@ -29,18 +29,6 @@ def login(request):
 def inicio(request):
     return render(request, 'Inicio.html')
 
-# def productos(request):
-#     form = ProductoForm()
-#     prod = Producto.objects.all()
-#     if request.method == 'POST':
-#          form = ProductoForm(request.POST)
-#          if form.is_valid():
-#              form.save()
-#          return productos(request)
-#     data = {'productos':prod,
-#     'form':form}
-#     return render(request,'Productos.html',data)
-
 
 def productos(request):
      prod = Producto.objects.all()
@@ -73,18 +61,3 @@ def eliminarProducto(request,id):
     prod.delete()
     return redirect('/productos')
 
-
-
-# def addProducto(request):
-#      fnombre = request.POST['nombre']
-#      fprecio = request.POST['precio']
-#      ffechaVec = request.POST['fechaVec']
-#      fmovimiento = request.POST['movimiento']
-#      fproveedor = request.POST['proveedor']
-#      fcategoria = request.POST['categoria']
-#      funidadMedida = request.POST['unidadMedida']
-#      ftipoProd = request.POST['tipoProd']
-#      fmodelo = request.POST['modelo']
-#      fEmbalaje = request.POST['Embalaje']
-#      producto = Producto.objects.create(nombre=fnombre, precio=fprecio,fechaVencimiento= ffechaVec,movimiento_codigoMovimiento=fmovimiento, proveedor_rutProveedor=fproveedor,categoria_categoriaId=fcategoria,unidadMedida_unidadMedidaId=funidadMedida,tipoProducto_tipoProductoId=ftipoProd,modelo_modeloId=fmodelo,embalaje_embalajeId=fEmbalaje)
-#      redirect('/productos')
