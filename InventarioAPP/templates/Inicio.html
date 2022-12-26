@@ -8,36 +8,18 @@
         <title>Inicio - Sistema Inventario</title>
     </head>
     <body>
-        <a href="../inicio"><strong>Inicio</strong></a>
-        <hr>
-        <header>
-            <img src="{% static 'img/Logo.png' %}" class="img-logo img">
-            <h1>Sistema Inventario</h1>
-            <a href="#">
-                <img src="{% static 'img/info.png' %}" class="img-logo img">
-                Informacion
-            </a>
-            <a href="">
-                <img src="{% static 'img/salir.png' %}" class="img-logo img">
-                Salir
-            </a>
-        </header>
-        
-        <div class="divusuario">
-            <hr>
-            <p class="usuario">Usuario: Administrador</p>
-        </div>
+        {% include 'header.html' %}
 
         <div class="menu-home">
             
             <div class="card">
-                <a href="">
+                <a href="#">
                     <img class="img-card" src="{% static 'img/Salida.png' %}"><br>
                     Salidas
                 </a>
             </div>
             <div class="card">
-                <a href="">
+                <a href="#">
                     <img class="img-card" src="{% static 'img/Entrada.png' %}"><br>
                     Entradas
                 </a>
@@ -49,25 +31,25 @@
                 </a>
             </div>
             <div class="card">
-                <a href="">
+                <a href="#">
                     <img class="img-card" src="{% static 'img/reportes.png' %}"><br>
                     Reportes
                 </a>
             </div>
             <div class="card cinco">
-                <a href="">
+                <a href="#">
                     <img class="img-card " src="{% static 'img/Proveedores.png' %}"><br>
                     Proveedores
                 </a>
             </div>
             <div class="card seis">
-                <a href="">
+                <a href="#">
                     <img class="img-card" src="{% static 'img/Inventario.png' %}"><br>
                     Inventario
                 </a>
             </div>
             <div class="card siete">
-                <a href="">
+                <a href="#">
                     <img class="img-card" src="{% static 'img/configuraciones.png' %}"><br>
                     Configuración
                 </a>
