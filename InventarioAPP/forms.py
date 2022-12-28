@@ -36,3 +36,17 @@ class ProductoForm(forms.ModelForm):
             #'fechaVencimiento': forms.TextInput(attrs={"class": "form-input", "id":"fechaVec","name":"fechaVec"}),
         
         }
+
+class ProveedoresForm(forms.ModelForm):
+    comuna_comunaId = forms.ModelChoiceField(queryset=Comuna.objects.all(),label="Comuna", widget=forms.Select(attrs={"class": "form-select form-c2", "id":"Comuna","name":"Comuna"}))
+    class Meta:
+        model = Proveedor
+        fields = '__all__'
+
+        
+        widgets = {
+            'nombre': forms.TextInput(attrs={"class": "form-input", "id":"nombre","name":"nombre"}),
+            'rut': forms.TextInput(attrs={"class": "form-input", "id":"rut", "name":"rut"}),
+            'fono': forms.NumberInput(attrs={"class": "form-input", "id":"fono","name":"fono"}),
+            'direccion': forms.TextInput(attrs={"class": "form-input", "id":"direccion", "name":"direccion"}),
+        }

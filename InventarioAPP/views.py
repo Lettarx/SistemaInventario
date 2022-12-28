@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
-from http import HTTPStatus
 from django.http import HttpResponse
-
 from django.core.exceptions import ObjectDoesNotExist
+
+#LOGIN
 def login(request):
     form = LoginForm()
     
@@ -26,10 +26,14 @@ def login(request):
     data = {'formLogin': form}
     return render(request,'Login.html', data)
 
+
+#INICIO
 def inicio(request):
     return render(request, 'Inicio.html')
 
 
+
+#MODULO PRODUCTOS
 def productos(request):
      prod = Producto.objects.all()
      data = {'productos':prod}
@@ -60,4 +64,43 @@ def eliminarProducto(request,id):
     prod = Producto.objects.get(codigoProducto = id)
     prod.delete()
     return redirect('/productos')
+
+
+
+#MODULO CONFIGURACION
+
+
+
+#MODULO PROVEEDORES
+def proveedores(request):
+     prod = Proveedor.objects.all()
+     data = {'proveedores':prod}
+     return render(request,'Proveedores.html',data)
+
+def addProveedor(request):
+     form = ProveedoresForm()
+     if request.method == 'POST':
+         form = ProveedoresForm(request.POST)
+         if form.is_valid():
+             form.save()
+         return proveedores(request)
+     data = {'form':form}
+     return render(request,'AddProveedores.html',data)
+
+def actualizarProveedor(request,id):
+    prov = Proveedor.objects.get(rut = id)
+    form = ProveedoresForm(instance=prov)
+    if request.method == 'POST':
+        form = ProveedoresForm(request.POST,instance=prov)
+        if form.is_valid():
+            form.save()
+        return proveedores(request)
+    data = {'form':form}
+    return render(request,'AddProveedores.html',data)
+
+def eliminarProveedor(request,id):
+    prov = Proveedor.objects.get(rut = id)
+    prov.delete()
+    return redirect('/proveedores')
+
 

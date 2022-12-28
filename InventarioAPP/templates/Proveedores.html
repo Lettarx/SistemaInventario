@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='{% static  "styles/Producto.css"%}'>
+    <title>Proveedores - Sistema Inventario</title>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    <div class="body-productos">
+           
+        <div class="datagrid">
+            <h1>Listado de Proveedores</h1>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Rut</th>
+                            <th>Proveedor</th>
+                            <th>Fono</th>
+                            <th>dirección</th>
+                            <th>Comuna</th>
+                            <th colspan="2">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for prov in proveedores %}
+                        <tr>
+                            <td>{{prov.rut}}</td>
+                            <td>{{prov.nombre}}</td>
+                            <td>{{prov.fono}}</td>
+                            <td>{{prov.direccion}}</td>
+                            <td>{{prov.comuna_comunaId}}</td>
+                            <td><a href="/actualizarProveedor/{{ prov.rut }}" >Editar</a></td>
+                            <td><a href="/eliminarProveedor/{{ prov.rut }}">Eliminar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="boton-form">
+                    <a href="../addproveedor" >Añadir Proveedor</a>
+                </div>
+                
+                    
+        </div>
+    </div>
+</body>
+</html>
