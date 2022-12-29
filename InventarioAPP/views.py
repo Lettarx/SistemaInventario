@@ -104,3 +104,13 @@ def eliminarProveedor(request,id):
     return redirect('/proveedores')
 
 
+#Configuracion
+def config(request):
+    return render(request, 'Configuracion.html')
+
+
+#Salidas
+
+
+
+#Entradas

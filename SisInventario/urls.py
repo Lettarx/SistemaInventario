@@ -17,4 +17,6 @@ urlpatterns = [
     path('addproveedor/',views.addProveedor),
     path('eliminarProveedor/<str:id>',views.eliminarProveedor),
     path('actualizarProveedor/<str:id>',views.actualizarProveedor),
+    #configuracion
+    path('config/', views.config),
 ]
